@@ -14,7 +14,9 @@ RSpec.describe '/areas/area_id/trails/index.html.erb', type: :feature do
   describe 'as as user' do
     describe 'when I visit the area_id/trails index' do
       it 'displays each trail that is associated with that area along with the trail attributes' do
+        visit "/areas/#{@gulch.id}/trails"
 
+        expect(page).to have_content(@gulch.trails)
       end
     end
   end
