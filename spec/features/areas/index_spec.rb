@@ -6,7 +6,7 @@ RSpec.describe 'mtb areas index' do
     @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
   end
 
-  describe 'when a user visits parent page' do
+  describe 'when a user visits /areas page' do
     it 'shows the name of each mtb area' do
       visit "/areas"
 
@@ -15,8 +15,3 @@ RSpec.describe 'mtb areas index' do
     end
   end
 end
-
-# For each parent table
-# As a visitor
-# When I visit '/parents'
-# Then I see the name of each parent record in the system
