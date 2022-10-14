@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Area do
+  it {should have_many :trails}
+
   describe 'instance methods' do
     before(:each) do 
       @gulch = Area.create!(name: "Horse Gulch", region: "Durango, CO", peak_elevation: 7900, alpine: false)

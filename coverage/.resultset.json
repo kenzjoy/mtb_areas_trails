@@ -256,6 +256,7 @@
       "/Users/mackenzieleng/Desktop/turing_work/2mod/projects/mtb_areas_trails/app/models/area.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
@@ -266,26 +267,14 @@
           null
         ]
       },
-      "/Users/mackenzieleng/Desktop/turing_work/2mod/projects/mtb_areas_trails/app/controllers/areas_controller.rb": {
+      "/Users/mackenzieleng/Desktop/turing_work/2mod/projects/mtb_areas_trails/app/models/trail.rb": {
         "lines": [
           1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mackenzieleng/Desktop/turing_work/2mod/projects/mtb_areas_trails/app/controllers/application_controller.rb": {
-        "lines": [
           1,
           null
         ]
       }
     },
-    "timestamp": 1665710980
+    "timestamp": 1665717442
   }
 }
