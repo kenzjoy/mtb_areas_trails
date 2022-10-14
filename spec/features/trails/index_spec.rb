@@ -12,8 +12,11 @@ RSpec.describe '/trails/index.html.erb', type: :feature do
       it 'displays each trail and its attributes' do
         visit "/trails"
 
-        expect(page).to have_content(@dutch.attributes)
-        expect(page).to have_content(@goulding.attributes)
+        expect(page).to have_content(@dutch.name)
+        expect(page).to have_content(@goulding.difficulty)
+        expect(page).to have_content(@dutch.rating)
+        expect(page).to have_content(@goulding.length)
+        expect(page).to have_content(@dutch.open)
       end
     end
   end
