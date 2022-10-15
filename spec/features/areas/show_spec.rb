@@ -33,6 +33,13 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
         click_link 'Trails Index'
         expect(page).to have_current_path(trails_path)
       end
+      
+      it '- has a link at the top of the page that takes me to the areas index' do
+        visit "areas/#{@gulch.id}"
+
+        click_link 'Areas Index'
+        expect(page).to have_current_path(areas_path)
+      end
     end
   end
 end
