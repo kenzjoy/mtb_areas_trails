@@ -16,7 +16,11 @@ RSpec.describe '/areas/area_id/trails/index.html.erb', type: :feature do
       it 'displays each trail that is associated with that area along with the trail attributes' do
         visit "/areas/#{@gulch.id}/trails"
 
-        expect(page).to have_content(@anasazi.attributes)
+        expect(page).to have_content(@anasazi.name)
+        expect(page).to have_content(@anasazi.difficulty)
+        expect(page).to have_content(@anasazi.rating)
+        expect(page).to have_content(@anasazi.length)
+        expect(page).to have_content(@anasazi.open)
       end
     end
   end
