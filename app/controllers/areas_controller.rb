@@ -5,7 +5,6 @@ class AreasController < ApplicationController
 
   def show
     @area = Area.find(params[:id])
-    # require 'pry'; binding.pry
-    # @gulch.trails.count
+    @trails = @area.trail_count
   end
 end
