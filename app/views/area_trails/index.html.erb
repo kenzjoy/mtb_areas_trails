@@ -1,0 +1,4 @@
+<h1><%= @area.name %></h1>
+<% @area.trails.each do |trail| %>
+  <p><%= trail.attributes %></p>
+<% end %>
