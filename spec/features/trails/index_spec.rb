@@ -18,6 +18,13 @@ RSpec.describe '/trails/index.html.erb', type: :feature do
         expect(page).to have_content(@goulding.length)
         expect(page).to have_content(@dutch.open)
       end
+
+      it '- has a link at the top of the page that takes me to the trails index' do
+        visit "/trails"
+
+        click_link 'Trails Index'
+        expect(page).to have_current_path(trails_path)
+      end
     end
   end
 end
