@@ -8,7 +8,7 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
 
   describe 'as a user' do
     describe 'when I visit /areas/:id' do
-      it 'shows the area tied to the specified :id and its attributes' do
+      it '- shows the area tied to the specified :id and its attributes' do
         visit "/areas/#{@gulch.id}"
 
         expect(page).to have_content(@gulch.region)

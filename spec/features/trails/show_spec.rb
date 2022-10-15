@@ -9,7 +9,7 @@ RSpec.describe '/trails/show.html.erb', type: :feature do
   
   describe 'as a user' do
     describe 'when I visit /trails/:id' do
-      it 'shows the trail tied to the specific :id and its attributes' do
+      it '- shows the trail tied to the specific :id and its attributes' do
         visit "/trails/#{@goulding.id}"
 
         expect(page).to have_content(@goulding.name)

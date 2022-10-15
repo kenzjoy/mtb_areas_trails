@@ -10,11 +10,11 @@ RSpec.describe Trail, type: :model do
       @goulding = @hermosa.trails.create!(name: "Goulding Creek", difficulty: "Double Black", rating: 3.2, length: 2.9, open: true)      
     end
 
-    it 'exists' do
+    it '- exists' do
       expect(@dutch).to be_a(Trail)
     end
 
-    it 'has attributes' do
+    it '- has attributes' do
       expect(@dutch.name).to eq("Dutch Creek")
       expect(@dutch.difficulty).to eq("Black")
       expect(@goulding.rating).to eq(3.2)

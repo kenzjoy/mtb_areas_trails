@@ -9,11 +9,11 @@ RSpec.describe Area, type: :model do
       @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
     end
 
-    it 'exists' do
+    it '- exists' do
       expect(@gulch).to be_an(Area)
     end
 
-    it 'has attributes' do
+    it '- has attributes' do
       expect(@gulch.name).to eq("Horse Gulch")
       expect(@gulch.peak_elevation).to eq(7900)
       expect(@hermosa.region).to eq("San Juan South")

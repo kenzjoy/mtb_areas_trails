@@ -9,7 +9,7 @@ RSpec.describe '/trails/index.html.erb', type: :feature do
 
   describe 'as a user' do
     describe 'when I visit the trails index' do
-      it 'displays each trail and its attributes' do
+      it '- displays each trail and its attributes' do
         visit "/trails"
 
         expect(page).to have_content(@dutch.name)
