@@ -19,8 +19,10 @@ RSpec.describe '/areas/area_id/trails/index.html.erb', type: :feature do
         expect(page).to have_content(@anasazi.name)
         expect(page).to have_content(@anasazi.difficulty)
         expect(page).to have_content(@anasazi.rating)
-        expect(page).to have_content(@anasazi.length)
-        expect(page).to have_content(@anasazi.open)
+        expect(page).to have_content(@telegraph.length)
+        expect(page).to have_content(@telegraph.open)
+        expect(page).to_not have_content(@goulding.name)
+        expect(page).to_not have_content(@dutch.attributes)
       end
     end
   end
