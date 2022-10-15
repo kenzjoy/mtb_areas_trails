@@ -1,4 +1,4 @@
 <h1>Mountain Bike Areas</h1>
 <% @areas.each do |area| %>
-  <p>Area: <%= area.name %></p>
+  <p><b><%= area.name %></b> (<%= area.created_at %>)</p> 
 <% end %>

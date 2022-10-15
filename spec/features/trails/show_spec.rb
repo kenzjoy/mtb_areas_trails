@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-RSpec.describe '/trails/show.html.erb' do
+RSpec.describe '/trails/show.html.erb', type: :feature do
   before(:each) do 
     @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
     @dutch = @hermosa.trails.create!(name: "Dutch Creek", difficulty: "Black", rating: 5.0, length: 5.9, open: true)
