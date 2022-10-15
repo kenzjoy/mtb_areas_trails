@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-RSpec.describe '/areas/show.html.erb' do
+RSpec.describe '/areas/show.html.erb', type: :feature do
   before(:each) do
     @gulch = Area.create!(name: "Horse Gulch", region: "Durango, CO", peak_elevation: 7900, alpine: false)
     @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
