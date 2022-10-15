@@ -26,6 +26,13 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
 
         expect(page).to have_content("There are #{@hermosa.trail_count} trails in this area.")
       end
+
+      it '- has a link at the top of the page that takes me to the trails index' do
+        visit "areas/#{@hermosa.id}"
+
+        click_link 'Trails Index'
+        expect(page).to have_current_path(trails_path)
+      end
     end
   end
 end
