@@ -5,5 +5,6 @@ class AreasController < ApplicationController
 
   def show
     @gulch = Area.find(params[:id])
+    @gulch.trails.count
   end
 end

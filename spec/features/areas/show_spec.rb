@@ -16,6 +16,12 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
         expect(page).to have_content(@gulch.alpine)
         expect(page).to_not have_content(@hermosa.region)
       end
+
+      it '- shows a count of the number of trails associated with this area' do
+        visit "areas/#{@hermosa.id}"
+
+        expect(page).to have_content("There are #{@hermosa.trails.count} in this area.")
+      end
     end
   end
 end
