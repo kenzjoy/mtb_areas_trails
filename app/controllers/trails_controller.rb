@@ -4,6 +4,6 @@ class TrailsController < ApplicationController
   end
 
   def show
-    @goulding = Trail.find(params[:id])
+    @trail = Trail.find(params[:id])
   end
 end
