@@ -11,10 +11,22 @@
 
 'require rails_helper'
 
-RSpec.describe '/parents/:id/edit' do
+RSpec.describe '/areas/:id/edit' do
+  before(:each) do
+    @gulch = Area.create!(name: "Horse Gulch", region: "Durango, CO", peak_elevation: 7900, alpine: false)
+    @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
+    @telegraph = @gulch.trails.create!(name: "Telegraph", difficulty: "Blue", rating: 4.0, length: 2.8, open: true)
+    @anasazi = @gulch.trails.create!(name: "Anasazi", difficulty: "Black", rating: 5.0, length: 0.7, open: true)   
+    @dutch = @hermosa.trails.create!(name: "Dutch Creek", difficulty: "Black", rating: 5.0, length: 5.9, open: true)
+    @goulding = @hermosa.trails.create!(name: "Goulding Creek", difficulty: "Double Black", rating: 3.2, length: 2.9, open: true)
+  end
+
   describe 'as a user' do
     describe 'I can edit an areas attributes' do
-      it 'links to the edit area page'
+      it '- sends a patch request to area/area_id and that areas info is updated' do
+        visit "/areas/#{@gulch.id}/edit"
+
+      end
     end
   end
 end
