@@ -4,10 +4,10 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
   before(:each) do
     @gulch = Area.create!(name: "Horse Gulch", region: "Durango, CO", peak_elevation: 7900, alpine: false)
     @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
-    @telegraph = Trail.create!(name: "Telegraph", difficulty: "Blue", rating: 4.0, length: 2.8, open: true, area_id: @gulch.id)
-    @anasazi = Trail.create!(name: "Anasazi", difficulty: "Black", rating: 5.0, length: 0.7, open: true, area_id: @gulch.id)   
-    @dutch = Trail.create!(name: "Dutch Creek", difficulty: "Black", rating: 5.0, length: 5.9, open: true, area_id: @hermosa.id)
-    @goulding = Trail.create!(name: "Goulding Creek", difficulty: "Double Black", rating: 3.2, length: 2.9, open: true, area_id: @hermosa.id)
+    @telegraph = @gulch.trails.create!(name: "Telegraph", difficulty: "Blue", rating: 4.0, length: 2.8, open: true)
+    @anasazi = @gulch.trails.create!(name: "Anasazi", difficulty: "Black", rating: 5.0, length: 0.7, open: true)   
+    @dutch = @hermosa.trails.create!(name: "Dutch Creek", difficulty: "Black", rating: 5.0, length: 5.9, open: true)
+    @goulding = @hermosa.trails.create!(name: "Goulding Creek", difficulty: "Double Black", rating: 3.2, length: 2.9, open: true)
   end
 
   describe 'as a user' do
@@ -46,6 +46,13 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
 
         click_link 'Area Trails'
         expect(page).to have_current_path("/areas/#{@hermosa.id}/trails")
+      end
+
+      it '- has an update area link that directs to /areas/:id/edit' do
+        visit "areas/#{@gulch.id}"
+
+        click_link 'Update Area'
+        expect(page).to have_current_path("/areas/#{@gulch.id}/edit")
       end
     end
   end

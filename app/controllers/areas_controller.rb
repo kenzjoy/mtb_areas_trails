@@ -13,7 +13,21 @@ class AreasController < ApplicationController
   end
 
   def create
-    @area = Area.create!(name: params[:name], region: params[:region], peak_elevation: params[:peak_elevation])
+    @area = Area.create!(area_params)
     redirect_to "/areas"
+  end
+
+  def edit
+    @area = Area.find(params[:id])
+  end
+
+  def update
+    area = Area.find(params[:id])
+    area.update(area_params)
+    redirect_to "/areas/#{area.id}"
+  end
+
+  def area_params
+    params.permit(:name, :region, :peak_elevation, :alpine)
   end
 end

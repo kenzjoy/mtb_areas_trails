@@ -10,7 +10,7 @@ RSpec.describe '/areas/new.html.erb', type: :feature do
         fill_in('name', with: 'Coal Bank Pass') 
         fill_in('region', with: 'San Juan Central') 
         fill_in('peak_elevation', with: 12192)
-        fill_in('alpine', with: true)
+        # fill_in('alpine', with: true)
         click_button('Create Area')
 
         expect(current_path).to eq("/areas")
