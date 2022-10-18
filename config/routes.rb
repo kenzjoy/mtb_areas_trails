@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/trails/:id', to: 'trails#show'
   
   get '/areas/:area_id/trails', to: 'area_trails#index'
+  get '/areas/:area_id/trails/new', to: 'area_trails#new'
 end

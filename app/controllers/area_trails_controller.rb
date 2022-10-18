@@ -3,4 +3,8 @@ class AreaTrailsController < ApplicationController
     @area = Area.find(params[:area_id])
     @trails = @area.trails
   end
+
+  def new
+    
+  end
 end
