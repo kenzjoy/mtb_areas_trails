@@ -12,9 +12,9 @@ class TrailsController < ApplicationController
   end
 
   def update
-    trail = Trail.find(params[:id])
-    trail.update(trail_params)
-    redirect_to "/trail/#{trail.id}"
+    @trail = Trail.find(params[:id])
+    @trail.update(trail_params)
+    redirect_to "/trails/#{@trail.id}"
   end
 
 private

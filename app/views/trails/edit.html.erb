@@ -1,4 +1,4 @@
-<%= form_with url: "/trails/#{@trail.id}", method: :post, local: true do |form| %>
+<%= form_with url: "/trails/#{@trail.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
   <%= form.label :difficulty %>

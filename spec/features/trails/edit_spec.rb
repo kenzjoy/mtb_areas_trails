@@ -23,7 +23,6 @@ RSpec.describe '/trails/:id/edit' do
 
         fill_in('Name', with: "Mikes")
         click_button('Update Trail')
-
         expect(page).to have_current_path("/trails/#{@mikes.id}")
         expect(page).to have_content("Mikes")
       end

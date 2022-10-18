@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/trails/:id/edit', to: 'trails#edit'
   patch '/trails/:id', to: 'trails#update'
+  # post '/trails/:id', to: 'trails#create'
 
   
 end
