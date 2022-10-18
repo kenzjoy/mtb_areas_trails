@@ -27,6 +27,7 @@ class AreasController < ApplicationController
     redirect_to "/areas/#{area.id}"
   end
 
+private
   def area_params
     params.permit(:name, :region, :peak_elevation, :alpine)
   end
