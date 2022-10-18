@@ -23,6 +23,8 @@ RSpec.describe '/areas/area_id/trails/index.html.erb', type: :feature do
         expect(page).to_not have_content(@goulding.name)
         expect(page).to_not have_content(@dutch.attributes)
       end
+
+      
     end
   end
 end
