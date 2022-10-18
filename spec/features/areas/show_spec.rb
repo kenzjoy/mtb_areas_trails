@@ -51,7 +51,7 @@ RSpec.describe '/areas/show.html.erb', type: :feature do
       it '- has an update area link that directs to /areas/:id/edit' do
         visit "areas/#{@gulch.id}"
 
-        click_link "Update Area"
+        click_link 'Update Area'
         expect(page).to have_current_path("/areas/#{@gulch.id}/edit")
       end
     end

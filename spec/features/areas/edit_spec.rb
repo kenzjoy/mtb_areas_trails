@@ -9,9 +9,9 @@
 # the parent's info is updated,
 # and I am redirected to the Parent's Show page where I see the parent's updated info
 
-'require rails_helper'
+require 'rails_helper'
 
-RSpec.describe '/areas/:id/edit' do
+RSpec.describe '/areas/:id/edit', type: :feature do
   before(:each) do
     @gulch = Area.create!(name: "Horse Gulch", region: "Durango, CO", peak_elevation: 7900, alpine: false)
     @hermosa = Area.create!(name: "Hermosa Creek", region: "San Juan South", peak_elevation: 10750, alpine: true)
@@ -24,8 +24,19 @@ RSpec.describe '/areas/:id/edit' do
   describe 'as a user' do
     describe 'I can edit an areas attributes' do
       it '- sends a patch request to area/area_id and that areas info is updated' do
-        visit "/areas/#{@gulch.id}/edit"
+        @phils = Area.create!(name: "Pil's Wrld", region: "Cortez, CO", peak_elevation: 6650, alpine: false)
 
+        visit "/areas/#{@phils.id}"
+        
+        expect(page).to have_content("Pil's Wrld")
+
+        visit "/areas/#{@phils.id}/edit"
+    
+        fill_in('Name', with: "Phil's World")
+        click_button('Update Area')
+
+        expect(page).to have_current_path("/areas/#{@phils.id}")
+        expect(page).to have_content("Phil's World")
       end
     end
   end
