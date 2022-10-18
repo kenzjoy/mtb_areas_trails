@@ -5,3 +5,5 @@
 <% @areas.each do |area| %>
   <p><b><%= area.name %></b> (<%= area.created_at %>)</p> 
 <% end %>
+
+<%= link_to "New Area", "/areas/new" %>

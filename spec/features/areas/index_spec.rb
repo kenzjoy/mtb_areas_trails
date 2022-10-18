@@ -42,6 +42,13 @@ RSpec.describe '/areas/index.html.erb', type: :feature do
         click_link 'Areas Index'
         expect(page).to have_current_path(areas_path)
       end
+
+      it '- has a link to areas/new where I can create a new area' do
+        visit "/areas"
+
+        click_link('New Area')
+        expect(current_path).to eq('/areas/new')
+      end
     end
   end
 end
