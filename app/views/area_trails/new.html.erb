@@ -1,0 +1,14 @@
+<%= form_with url: "/areas/#{@area.id}/trails", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :difficulty %>
+  <%= form.text_field :difficulty %>
+  <%= form.label :rating %>
+  <%= form.text_field :rating %>
+  <%= form.label :length %>
+  <%= form.text_field :length %>
+  <%= form.label :open %>
+  <%= form.text_field :open %>
+
+  <%= form.submit "Create Trail" %>
+<% end %>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/areas', to: 'areas#index'
   get '/areas/new', to: 'areas#new' 
   post '/areas', to: 'areas#create'
-
+  
   get '/areas/:id', to: 'areas#show'
   get '/areas/:id/edit', to: 'areas#edit'
   patch '/areas/:id', to: 'areas#update'
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   
   get '/areas/:area_id/trails', to: 'area_trails#index'
   get '/areas/:area_id/trails/new', to: 'area_trails#new'
+  post '/areas/:area_id/trails', to: 'area_trails#create'
 end
