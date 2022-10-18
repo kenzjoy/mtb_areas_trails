@@ -21,4 +21,7 @@ class AreasController < ApplicationController
     params.permit(:name, :region, :peak_elevation, :alpine)
   end
 
+  def edit
+  end
+
 end

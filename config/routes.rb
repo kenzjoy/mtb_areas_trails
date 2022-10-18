@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/areas/new', to: 'areas#new' 
   post '/areas', to: 'areas#create'
   get '/areas/:id', to: 'areas#show'
+  get '/areas/:id/edit', to: 'areas#show'
   
   get '/trails', to: 'trails#index'
   get '/trails/:id', to: 'trails#show'
