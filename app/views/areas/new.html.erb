@@ -1,0 +1,12 @@
+<%= form_with url: '/areas', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :region %>
+  <%= form.text_field :region %>
+  <%= form.label :peak_elevation %>
+  <%= form.text_field :peak_elevation %>
+  <%= form.label :alpine %>
+  <%= form.text_field :alpine %>
+
+  <%= form.submit "Create Area" %>
+<% end %>

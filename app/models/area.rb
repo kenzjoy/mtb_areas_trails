@@ -4,4 +4,8 @@ class Area < ApplicationRecord
   def trail_count
     self.trails.count
   end
+
+  # def order_by_created_at
+  #   order(:created_at)
+  # end
 end

@@ -1,16 +1,21 @@
 require 'rails_helper' 
 
 RSpec.describe '/areas/new.html.erb', type: :feature do
-  
-  xit '- has a form to make a new area record that can be filled out with a new area and its attributes' do 
-  
-  end
+  describe 'as a user' do 
+    describe 'I can fill out a new area form' do
+      it '- can be filled out with a new area and its attributes, and redirects 
+        back to the area index where the new area name is displayed' do 
+        visit '/areas/new'
+        
+        fill_in('name', with: 'Coal Bank Pass') 
+        fill_in('region', with: 'San Juan Central') 
+        fill_in('peak_elevation', with: 12192)
+        fill_in('alpine', with: true)
+        click_button('Create Area')
 
-  xit '- has a create area button that will submit the form' do
-
-  end
-
-  xit '- creates a new parent record, and I am redirected to the area index page' do
-
+        expect(current_path).to eq("/areas")
+        expect(page).to have_content("Coal Bank Pass")
+      end
+    end
   end
 end
