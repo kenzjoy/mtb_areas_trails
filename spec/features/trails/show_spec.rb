@@ -35,6 +35,13 @@ RSpec.describe '/trails/show.html.erb', type: :feature do
         click_link 'Areas Index'
         expect(page).to have_current_path(areas_path)
       end
+
+      it '- has a link that directs to /trails/trail_id/edit' do
+        visit "trails/#{@goulding.id}"
+
+        click_link 'Update Trail'
+        expect(page).to have_current_path("/trails/#{@goulding.id}/edit")
+      end
     end
   end
 end
